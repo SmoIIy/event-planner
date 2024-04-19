@@ -3,25 +3,22 @@ export const dynamic = "force-dynamic";
 const headersList = {
   Accept: "application/json",
   apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  Prefer: "return=representation",
 };
 async function getEvent(id) {
   const response = await fetch(
     "https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/events?id=eq." + id,
-    {
-      headers: headersList,
-    }
+    { headers: headersList, cache: "no-store" }
   );
   const data = await response.json();
   return data[0];
 }
 async function getComments(id) {
-  const ep =
-    "https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/events_comments?event_id=eq." +
-    id;
+  const ep = `https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/events_comments?event_id=eq.${id}`;
 
   const responseComments = await fetch(ep, {
     headers: headersList,
-    cache: "no-cache",
+    cache: "no-store",
   });
 
   return await responseComments.json();
