@@ -1,5 +1,5 @@
 import AddComment from "@/components/AddComment";
-
+export const dynamic = "force-dynamic";
 export default async function EventPage({ params }) {
   const uuid = params.uuid;
 
@@ -11,7 +11,6 @@ export default async function EventPage({ params }) {
     "https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/events?id=eq." + uuid,
     {
       headers: headersList,
-      cache: "no-cache",
     }
   );
   const data = await response.json();
