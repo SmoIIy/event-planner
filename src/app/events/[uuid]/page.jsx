@@ -10,6 +10,7 @@ export default async function EventPage({ params }) {
       headers: headersList,
     }
   );
+
   let data = await response.json();
   const eventInfo = data[0];
   return (
