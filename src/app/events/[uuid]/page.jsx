@@ -1,10 +1,10 @@
 import AddComment from "@/components/AddComment";
 export const dynamic = "force-dynamic";
+const headersList = {
+  Accept: "application/json",
+  apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+};
 async function getEvent(id) {
-  const headersList = {
-    Accept: "application/json",
-    apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-  };
   const response = await fetch(
     "https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/events?id=eq." + id,
     {
