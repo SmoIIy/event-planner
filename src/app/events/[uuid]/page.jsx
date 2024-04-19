@@ -1,3 +1,5 @@
+import AddComment from "@/components/AddComment";
+
 export default async function EventPage({ params }) {
   const uuid = params.uuid;
 
@@ -44,6 +46,7 @@ export default async function EventPage({ params }) {
             </dl>
           </div>
         ))}
+        <AddComment uuid={uuid} />
       </section>
     </article>
   );
