@@ -2,7 +2,7 @@ import AddComment from "@/components/AddComment";
 export const dynamic = "force-dynamic";
 const headersList = {
   Accept: "application/json",
-  apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxrdG9laWRzdGV3bmpud3JqcnJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3NTE2MzksImV4cCI6MjAyNjMyNzYzOX0.BdU7kexk3VBblD1893zA94IEIxG5aAY59ZilRhjoAc8",
   Prefer: "return=representation",
 };
 async function getEvent(id) {
